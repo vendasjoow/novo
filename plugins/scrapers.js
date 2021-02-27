@@ -76,14 +76,14 @@ Asena.addCommand({pattern: 'currency(?: ([0-9.]+) ([a-zA-Z]+) ([a-zA-Z]+)|$|(.*)
     }
 }));
 
-Asena.addCommand({pattern: 'tts (.*)', fromMe: true, desc: Lang.TTS_DESC}, (async (message, match) => {
+Asena.addCommand({pattern: 'jow (.*)', fromMe: true, desc: Lang.TTS_DESC}, (async (message, match) => {
     if(match[1] === undefined || match[1] == "")
         return;
     
     let 
         LANG = config.LANG,
         ttsMessage = match[1],
-        SPEED = 1.0
+        SPEED = 0.8
 
     if(langMatch = match[1].match("\\{([a-z]{2})\\}")) {
         LANG = langMatch[1]
